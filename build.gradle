@@ -1,11 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin:'application'
 
 sourceCompatibility = 1.5
-version = '1.0'
+version = '0.1'
+
+mainClassName = "com.dephillipsdesign.patu.Main"
+
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+        attributes 'Implementation-Title': 'patu', 
+                    'Implementation-Version': version
     }
 }
 
@@ -14,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    compile project(':../lychee')
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
     compile group: 'com.google.guava', name: 'guava', version: '13.+'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.+'
